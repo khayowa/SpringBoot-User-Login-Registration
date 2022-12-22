@@ -1,6 +1,6 @@
 package com.example.ULR.appuser;
 
-import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +15,7 @@ import java.util.Collections;
 @Getter
 @Setter
 @EqualsAndHashCode
-@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "AppUser")
 public class AppUser implements UserDetails {
     @Id
@@ -35,8 +35,8 @@ public class AppUser implements UserDetails {
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
-    private Boolean locked;
-    private Boolean enabled;
+    private Boolean locked = false;
+    private Boolean enabled =false;
 
     public AppUser(String firstName,
                    String lastName,
